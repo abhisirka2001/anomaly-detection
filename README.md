@@ -44,7 +44,7 @@ To set up and run the project locally, follow these steps:
 
 
 ### Error Handling 
-**The system incorporates robust error handling, using try-except blocks to manage exceptions during data generation and anomaly detection, ensuring graceful failures and clear error messages without crashing.**
+- The system incorporates robust error handling, using try-except blocks to manage exceptions during data generation and anomaly detection, ensuring graceful failures and clear error messages without crashing.**
 
 
 
