@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import argparse
 
-# Function to simulate a real-time data stream with noise and injected anomalies
-def generate_real_time_data_stream(n_samples=1000, noise=0.003, anomaly_prob=0.05):
+
+def generate_real_time_data_stream(n_samples=1000, noise=0.001, anomaly_prob=0.05):
     """
     Generates a synthetic real-time data stream consisting of a noisy sine wave
     with randomly injected anomalies.
@@ -13,7 +13,7 @@ def generate_real_time_data_stream(n_samples=1000, noise=0.003, anomaly_prob=0.0
     n_samples : int, optional, default=1000
         The total number of data points to generate.
     
-    noise : float, optional, default=0.05
+    noise : float, optional, default=0.001
         The standard deviation of the Gaussian noise added to the sine wave.
     
     anomaly_prob : float, optional, default=0.05
@@ -33,12 +33,13 @@ def generate_real_time_data_stream(n_samples=1000, noise=0.003, anomaly_prob=0.0
         
         # Inject anomalies at random locations with a specified probability
         anomalies = np.random.choice([True, False], size=n_samples, p=[anomaly_prob, 1 - anomaly_prob])
-        X[anomalies] += np.random.uniform(10, 20, size=sum(anomalies))  # Inject large anomalies
+        X[anomalies] += np.random.uniform(1, 5, size=sum(anomalies))  # Decrease the range of injected anomalies
         
         return X, anomalies
     except Exception as e:
         print(f"Error generating data stream: {e}")
         return np.array([]), np.array([])
+
 
 # Z-score based anomaly detection
 def z_score_anomaly_detection(data, threshold=2):
