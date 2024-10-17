@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import argparse
 
 # Function to simulate a real-time data stream with noise and injected anomalies
-def generate_real_time_data_stream(n_samples=1000, noise=0.05, anomaly_prob=0.05):
+def generate_real_time_data_stream(n_samples=1000, noise=0.003, anomaly_prob=0.05):
     """
     Generates a synthetic real-time data stream consisting of a noisy sine wave
     with randomly injected anomalies.
@@ -299,3 +299,4 @@ if __name__ == "__main__":
 
     # Run the real-time anomaly detection system with parsed arguments
     real_time_anomaly_detection_system(window_size=args.window_size, step_size=args.step_size, delay=args.delay)
+
