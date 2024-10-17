@@ -34,3 +34,17 @@ To set up and run the project locally, follow these steps:
    pip install -r requirements.txt
 
 
+2. **Run the python file:**
+   ```bash
+   python main.py
+
+3. **Customize with your arguments**
+   ```bash
+   python main.py --window_size 100 --step_size 10 --delay 0.2
+
+
+# The system incorporates robust error handling, using try-except blocks to manage exceptions during data generation and anomaly detection, ensuring graceful failures and clear error messages without crashing.
+
+
+
+
